@@ -8,6 +8,7 @@
 		public $birthdate;
 		public $token;
 		public $type;
+		public $avatar;
 	}
 
 

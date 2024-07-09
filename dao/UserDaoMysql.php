@@ -18,6 +18,7 @@
 			$u->birthdate = $array['birthdate'] ?? '';
 			$u->token = $array['token'] ?? '';
 			$u->type = $array['type'] ?? '';
+			$u->avatar = $array['avatar'] ?? '';
 
 			return $u;
 
@@ -66,7 +67,8 @@
 				name = :name,
 				birthdate = :birthdate,
 				type = :type,
-				token = :token
+				token = :token,
+				avatar = :avatar
 				WHERE id = :id");
 
 			$sql->bindValue(':email', $u->email);
@@ -75,6 +77,7 @@
 			$sql->bindValue(':birthdate', $u->birthdate);
 			$sql->bindValue(':token', $u->token);
 			$sql->bindValue(':type', $u->type);
+			$sql->bindValue(':avatar', $u->avatar);
 			$sql->bindValue(':id', $u->id);
 			$sql->execute();
 

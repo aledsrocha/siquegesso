@@ -22,7 +22,7 @@
            <small class="text-muted"></small>
        </div>
        <div class="profile-photo">
-         <img src="<?=$base;?>/media/avatars/dafault.jpg" alt=""/>
+         <img src="<?=$base;?>/media/avatars/<?=$userInfo->avatar;?>" alt=""/>
        </div>
     </div>
 </div>

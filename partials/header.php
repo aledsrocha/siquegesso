@@ -69,7 +69,7 @@
               <span class="material-symbols-sharp">report_gmailerrorred </span>
               <h3>Reports</h3>
            </a>
-           <a href="#">
+           <a href="<?=$base;?>/configuracoes.php">
               <span class="material-symbols-sharp">settings </span>
               <h3>settings</h3>
            </a>
