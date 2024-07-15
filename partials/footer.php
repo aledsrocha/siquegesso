@@ -17,8 +17,8 @@
    </div>
     <div class="profile">
        <div class="info">
-           <p><b>Babar</b></p>
-           <p><?=$firstName?></p>
+           
+           <p><?=$firstName;?></p>
            <small class="text-muted"></small>
        </div>
        <div class="profile-photo">

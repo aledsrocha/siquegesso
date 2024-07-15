@@ -52,7 +52,7 @@
               <span class="material-symbols-sharp">garden_cart </span>
               <h3>controle de entrega</h3>
            </a>
-           <a href="#">
+           <a href="<?=$base;?>/analytics.php">
               <span class="material-symbols-sharp">insights </span>
               <h3>Analytics</h3>
            </a>
