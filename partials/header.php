@@ -73,7 +73,7 @@
               <span class="material-symbols-sharp">settings </span>
               <h3>settings</h3>
            </a>
-           <a href="#">
+           <a href="<?=$base;?>/upload_image.php">
               <span class="material-symbols-sharp">add </span>
               <h3>Add Product</h3>
            </a>
