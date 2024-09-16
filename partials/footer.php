@@ -1,4 +1,10 @@
+<?php 
+  // Consulta para obter as atualizações recentes
+$stmt = $pdo->query('SELECT nome_produto, preco, imagem FROM produtos ORDER BY id DESC LIMIT 5');
+$updates = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 
+ 
       
 
       <!----------------
@@ -27,35 +33,23 @@
     </div>
 </div>
 
-  <div class="recent_updates">
-     <h2>Recent Update</h2>
-   <div class="updates">
-      <div class="update">
-         <div class="profile-photo">
-            <img src="./images/profile-4.jpg" alt=""/>
-         </div>
-        <div class="message">
-           <p><b>Babar</b> Recived his order of USB</p>
-        </div>
-      </div>
-      <div class="update">
-        <div class="profile-photo">
-        <img src="./images/profile-3.jpg" alt=""/>
-        </div>
-       <div class="message">
-          <p><b>Ali</b> Recived his order of USB</p>
-       </div>
-     </div>
-     <div class="update">
-      <div class="profile-photo">
-         <img src="./images/profile-2.jpg" alt=""/>
-      </div>
-     <div class="message">
-        <p><b>Ramzan</b> Recived his order of USB</p>
-     </div>
-   </div>
-  </div>
-  </div>
+
+
+<div class="recent_updates">
+    <h2>Recent Updates</h2>
+    <div class="updates">
+        <?php foreach ($updates as $update): ?>
+            <div class="update">
+                <div class="profile-photo">
+                    <img src="<?php echo $update['imagem']; ?>" alt="Imagem de <?php echo htmlspecialchars($update['nome_produto']); ?>"/>
+                </div>
+                <div class="message">
+                    <p><b><?php echo htmlspecialchars($update['nome_produto']); ?></b> foi atualizado. Novo preço: $<?php echo htmlspecialchars($update['preco']); ?></p>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
 
 
    <div class="sales-analytics">

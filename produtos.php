@@ -49,7 +49,7 @@ h1 {
     border: 1px solid #ccc;
     padding: 20px;
     text-align: center;
-    width: 300px;
+    width: 200px;
     border-radius: 8px;
 }
 
@@ -81,7 +81,7 @@ h1 {
 <body>
     
     <div class="catalogo">
-      <h1>Catálogo de Produtos</h1>
+      <h1>Catálogo de Produtos</h1><br>
     
         <?php foreach ($produtos as $produto): ?>
             <div class="produto">
