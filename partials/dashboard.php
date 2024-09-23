@@ -1,3 +1,10 @@
+<?php  
+  $stmt = $pdo->query('SELECT nome_produto, quantidade, responsavel FROM vendasprodutos ORDER BY data_venda DESC LIMIT 5');
+$orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
+
 <main>
         <h1>Dashboard</h1>
 
@@ -68,29 +75,29 @@
         <!-- end insights -->
 
         <div class="recent_order">
-            <h2>Recent Orders</h2>
-            <table> 
-                <thead>
-                    <tr>
-                        <th>Product Name</th>
-                        <th>Product Number</th>
-                        <th>Payments</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Mini USB</td>
-                        <td>4563</td>
-                        <td>Due</td>
-                        <td class="warning">Pending</td>
-                        <td class="primary">Details</td>
-                    </tr>
-                    <!-- Mais linhas -->
-                </tbody>
-            </table>
-            <a href="#">Show All</a>
-        </div>
+    <h2>Recent Orders</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome produto</th>
+                <th>Quantidade</th>
+                <th>Responsavel da venda</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($orders as $order): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($order['nome_produto']); ?></td>
+                    <td><?php echo htmlspecialchars($order['quantidade']); ?></td>
+                    <td><?php echo htmlspecialchars($order['responsavel']); ?></td>
+                    
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+    ?<a href="<?=$base;?>/vendas.php">Show All</a>
+</div>
 
     </main>
 
